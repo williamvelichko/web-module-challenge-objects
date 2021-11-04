@@ -181,11 +181,14 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-function getLastReview(array, number) {
+function getLastReview(newArray) {
   /*Your code here*/
-  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
+  let lastArray = newArray.length - 1;
+  console.log(lastArray);
+  return `${newArray[lastArray].name} gave the restaurant a ${newArray[lastArray].rating} star review, and their feedback was: ${newArray[lastArray].feedback}`;
 }
-console.log(getReviewByIndex(reviews, 7));
+
+console.log(getLastReview(reviews));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
