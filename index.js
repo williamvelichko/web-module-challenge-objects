@@ -112,12 +112,9 @@ const reviews = [
   { name: "Reyna", rating: 3.5, feedback: "" },
 ];
 console.log(reviews[5].feedback);
-// for (let i = 0; i < reviews.length; i++) {
-//   if (reviews[i].name === "Julius") {
-//     console.log(reviews.feedback);
-//   }
-// }
-
+reviews[7].feedback =
+  "this place is chill with really cool people, great for getting work done on weekdays";
+console.log(reviews[7].feedback);
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 3: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Using the reviews array above:
   1. log only Julius' feedback to the console - no function needed 
@@ -138,9 +135,23 @@ Write a function that creates an object with name, rating, feedback, add the new
   4. should return the resulting array
 */
 
-function addReview(/*Your Code Here */) {
-  /*Your Code Here */
+function addReview(array, name, rating, feedback) {
+  const newReview = {
+    name,
+    rating,
+    feedback,
+  };
+  array.push(newReview);
+  return array;
 }
+console.log(
+  addReview(
+    reviews,
+    "Daniela",
+    "5",
+    "Beautiful atmosphere and wonderful vegan options!"
+  )
+);
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 6: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀
 Write a function to return a review based on the index of the review in the array.
@@ -152,9 +163,12 @@ Use the getReviewByIndex function below to do the following:
   For example: getReviewByIndex(reviews,0) would return: "Daniela gave the restaurant a 5 star review, and their feedback was: Beautiful atmosphere and wonderful vegan options!"
 */
 
-function getReviewByIndex(/*Your code here*/) {
+function getReviewByIndex(array, number) {
   /*Your code here*/
+
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
+console.log(getReviewByIndex(reviews, 7));
 
 /* 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 Task 7: 🚀🚀🚀🚀🚀🚀🚀🚀🚀🚀 
 Write a function to get information about the most recent (last) review called `getLastReview`
@@ -167,9 +181,11 @@ Use the getLastReview function below to do the following:
   For example: getLastReview(reviews) would return: "Reyna gave the restaurant a 3.5 star review, and their feedback was: this place is chill with really cool people, great for getting work done on weekdays".
 */
 
-function getLastReview(/*Your code here*/) {
+function getLastReview(array, number) {
   /*Your code here*/
+  return `${array[number].name} gave the restaurant a ${array[number].rating} star review, and their feedback was: ${array[number].feedback}`;
 }
+console.log(getReviewByIndex(reviews, 7));
 
 ///////////////🍔☕️🍽 STRETCH🍔☕️🍽////////////////////
 
